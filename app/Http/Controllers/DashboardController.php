@@ -20,6 +20,7 @@ class DashboardController extends Controller
   	public function postDataUser()
   	{
       $user = User::all();
+      //dd($user);
   		return Datatables::of($user)
             ->addColumn('show', function ($user) {
                 return '<a href="test/'.$user->id.'" class="btn btn-success"><i class="fa fa-eye fa-fw"></i> Show</a>';

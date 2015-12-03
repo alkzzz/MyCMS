@@ -8,7 +8,7 @@
 @stop
 
 @section('content')
-	<a href="{{ route('dashboard::addPage') }}"><button type="button" class="btn btn-success">Tambah <i class="fa fa-plus-square fa-fw"></i></button></a>
+	<a href="{{ route('dashboard::tambahmenu') }}"><button type="button" class="btn btn-success">Tambah <i class="fa fa-plus-square fa-fw"></i></button></a>
 	<hr>
 	<h3 class="lang-help"><em>Indonesia</em> / <em>English</em></h3>
 	<ul>
@@ -62,7 +62,7 @@
 				});
 
 				$.ajax({
-					url: "{{ route('dashboard::urutMenu')}}",
+					url: "{{ route('dashboard::urutmenu')}}",
 					type: 'POST',
 					headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
 					data: { urutan: urutan },
