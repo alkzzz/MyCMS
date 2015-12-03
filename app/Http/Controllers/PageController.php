@@ -42,7 +42,7 @@ class PageController extends Controller
 
     public function daftarMenu()
     {
-      $title = 'Daftar Menu';
+      $title = 'Post';
     	$daftarmenu = Post::page()->menu()->get()->sortBy('urutan');
       $daftarsubmenu = Post::page()->submenu()->get()->sortBy('urutan');
     	return view('dashboard.daftarmenu', compact('title','daftarmenu','daftarsubmenu'));
@@ -63,20 +63,10 @@ class PageController extends Controller
 
     }
 
-    public function addPage()
+    public function tambahMenu()
     {
         $title = 'Tambah Menu';
-        return view('page.addPage', compact('title'));
-    }
-
-    public function storePage(Request $request)
-    {
-        $input = $request->all();
-        $input['urutan'] = 99;
-        $input['post_type'] = 'page';
-        $input['slug_id'] = str_slug($request->input('title_id'));
-        $input['slug_en'] = str_slug($request->input('title_en'));
-        dd($input);
+        return view('dashboard.tambahmenu', compact('title'));
     }
 
 }
